@@ -8,6 +8,9 @@ export const bookingsReducer = (state = initialState, action) => {
         return state;
       }
       return [...state, { id: Date.now(), ...action.payload }];
+      // return [...state, { id: Date.now() + Math.random(), ...action.payload }];
+      //This is good practice for creating a unique id.Example is given below:
+      // id: Date.now() + Math.random()
     }
     case DELETE_BOOKING: {
       return state.filter((booking) => booking.id !== action.payload);
